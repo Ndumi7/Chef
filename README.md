@@ -54,7 +54,11 @@ Run the app (for Expo):
 bash
 Copy code
 npm start
-Changelog
+
+---
+
+
+## Changelog
 Part 2
 
 Implemented basic app with HomePage, MenuList, MenuDisplay
