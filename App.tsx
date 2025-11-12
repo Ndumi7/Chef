@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomePage from './screens/HomePage';
 import MenuList from './screens/MenuList';
 import MenuDisplay from './screens/MenuDisplay';
+import FilterMenu from './screens/FilterMenu'; // <-- new screen
 
 export type Dish = {
   id: string;
@@ -18,6 +19,7 @@ export type RootStackParamList = {
   HomePage: undefined;
   MenuList: undefined;
   MenuDisplay: undefined;
+  FilterMenu: undefined; // <-- added
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -29,13 +31,31 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="HomePage">
-          {(props) => <HomePage {...props} />}
+          {(props) => <HomePage {...props} menuItems={menuItems} />}
         </Stack.Screen>
+
         <Stack.Screen name="MenuList">
-          {(props) => <MenuList {...props} menuItems={menuItems} setMenuItems={setMenuItems} />}
+          {(props) => (
+            <MenuList
+              {...props}
+              menuItems={menuItems}
+              setMenuItems={setMenuItems}
+            />
+          )}
         </Stack.Screen>
+
         <Stack.Screen name="MenuDisplay">
-          {(props) => <MenuDisplay {...props} menuItems={menuItems} />}
+          {(props) => (
+            <MenuDisplay
+              {...props}
+              menuItems={menuItems}
+              setMenuItems={setMenuItems}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen name="FilterMenu">
+          {(props) => <FilterMenu {...props} menuItems={menuItems} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>

@@ -125,7 +125,17 @@ export default function MenuList({ navigation, menuItems, setMenuItems, route }:
               <Text style={styles.buttonText}>View Added Dishes</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.largeButton} onPress={() => navigation.goBack()}>
+            <TouchableOpacity
+              style={styles.largeButton}
+              onPress={() => navigation.navigate('FilterMenu', { menuItems })}
+            >
+              <Text style={styles.buttonText}>Filter Menu</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.largeButton}
+              onPress={() => navigation.navigate('HomePage')}
+            >
               <Text style={styles.buttonText}>Back to Home</Text>
             </TouchableOpacity>
           </View>
