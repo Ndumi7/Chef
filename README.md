@@ -1,5 +1,8 @@
 # Plated App
 
+GitHub link: https://github.com/Ndumi7/Chef.git 
+YouTube link: https://youtu.be/n-xD0TGDqmI 
+
 **Plated** is a mobile app that lets Chef Christoffel create and manage a personalized menu for guests. Guests can view the menu, filter dishes by course, and see average prices for starters, mains, and desserts.
 
 ---
